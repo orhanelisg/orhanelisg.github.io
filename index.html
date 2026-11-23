@@ -412,7 +412,7 @@
           <h3>Bildirimler</h3>
           <input type="search" id="fAra" placeholder="Takip no, bölüm, açıklama, bildiren…">
           <div class="fgrid">
-            <select id="fDurum"><option value="">Tüm durumlar</option><option value="acik">Açık (Yeni + İnceleniyor)</option><option>Yeni</option><option>İnceleniyor</option><option>Önlem Alındı</option><option>Kapandı</option></select>
+            <select id="fDurum"><option value="">Tüm durumlar</option><option value="acik">Açık (Yeni + İnceleniyor)</option><option>Yeni</option><option>İnceleniyor</option><option>Önlem Alındı</option></select>
             <select id="fTur"><option value="">Tüm türler</option><option>Tehlikeli Durum</option><option>Güvensiz Davranış</option><option>Ramak Kala</option></select>
             <select id="fAci"><option value="">Tüm aciliyetler</option><option>Yüksek</option><option>Orta</option><option>Düşük</option></select>
             <select id="fSira"><option value="yeni">En yeni önce</option><option value="eski">En eski önce</option><option value="aci">Önce yüksek aciliyet</option></select>
@@ -503,7 +503,7 @@
         <div id="dFotolar" class="dfotos"></div>
         <form id="dForm" class="dform">
           <h3>Takip</h3>
-          <label class="flbl">Durum<select id="dDurum"><option>Yeni</option><option>İnceleniyor</option><option>Önlem Alındı</option><option>Kapandı</option></select></label>
+          <label class="flbl">Durum<select id="dDurum"><option>Yeni</option><option>İnceleniyor</option><option>Önlem Alındı</option></select></label>
           <label class="flbl">Sorumlu<input type="text" id="dSorumlu" maxlength="100" placeholder="Adı soyadı / birimi"></label>
           <label class="flbl">Alınan önlem<textarea id="dOnlem" maxlength="2000" style="min-height:90px" placeholder="Ne yapıldı? Bildiren kişi takip numarasıyla bu metni görebilir."></textarea></label>
           <label class="flbl">Kapanış tarihi<input type="date" id="dKapanis"></label>
@@ -635,9 +635,13 @@ function istek(veri){
 
 // ================= Açılış: duyuru, form durumu, giriş sayımı =================
 (function baslat(){
-  let say = false;
-  try { if (!sessionStorage.getItem('isg_z')) { sessionStorage.setItem('isg_z', '1'); say = true; } } catch (e) {}
-  istek({ islem: 'baslat', sayim: say && !ONIZLEME }).then(c => { if (c && c.ok) formAyarUygula(c); }).catch(() => {});
+  let say = true;
+  try { say = !sessionStorage.getItem('isg_z'); } catch (e) {}
+  istek({ islem: 'baslat', sayim: say && !ONIZLEME }).then(c => {
+    if (!c || !c.ok) return;
+    if (say) { try { sessionStorage.setItem('isg_z', '1'); } catch (e) {} }   // sadece sunucu saydıysa işaretle
+    formAyarUygula(c);
+  }).catch(() => {});
 })();
 function formAyarUygula(a){
   $('#duyuru').hidden = !a.duyuru; $('#duyuruMetin').textContent = a.duyuru || '';
@@ -646,7 +650,7 @@ function formAyarUygula(a){
 }
 
 // ================= Bildirim durumu sorgulama (çalışanlar için) =================
-const DURUM_RENK = { 'Yeni': 'd-yeni', 'İnceleniyor': 'd-inc', 'Önlem Alındı': 'd-onlem', 'Kapandı': 'd-kap' };
+const DURUM_RENK = { 'Yeni': 'd-yeni', 'İnceleniyor': 'd-inc', 'Önlem Alındı': 'd-onlem' };
 const ACIKLAR = ['Yeni', 'İnceleniyor'];
 $('#sorguForm').addEventListener('submit', e => {
   e.preventDefault();
@@ -944,9 +948,9 @@ function onizlemeVeri(){
   const ornek = [
     ['Ramak Kala', 'Yüksek', 'Kazan dairesi, +24 kotu', 'Sıcak Yüzey / Buhar', 'Yeni', 1, ''],
     ['Tehlikeli Durum', 'Orta', 'Kömür hazırlama, B-3 bandı', 'Hareketli Makine / Bant', 'İnceleniyor', 9, ''],
-    ['Güvensiz Davranış', 'Düşük', 'Mekanik atölye', 'KKD Eksikliği', 'Kapandı', 15, 'Çalışanlara KKD eğitimi verildi.'],
+    ['Güvensiz Davranış', 'Düşük', 'Mekanik atölye', 'KKD Eksikliği', 'Önlem Alındı', 15, 'Çalışanlara KKD eğitimi verildi.'],
     ['Tehlikeli Durum', 'Yüksek', 'Şalt sahası', 'Elektrik', 'Önlem Alındı', 22, 'Pano kapağı değiştirildi.'],
-    ['Ramak Kala', 'Orta', 'Kömür stok sahası', 'İş Makinesi / Trafik', 'Kapandı', 40, 'Yaya yolu işaretlendi.'],
+    ['Ramak Kala', 'Orta', 'Kömür stok sahası', 'İş Makinesi / Trafik', 'Önlem Alındı', 40, 'Yaya yolu işaretlendi.'],
     ['Tehlikeli Durum', 'Düşük', 'İdari bina', 'Düzen / Tertip', 'Yeni', 3, '']
   ];
   onizleme = { ok: true, bugun, tabloUrl: '#', epostalar: ['isg@ornek.com.tr'],
