@@ -112,7 +112,8 @@
   .admbtn:hover{border-color:var(--brand)}
   .admbtn svg{flex:none}
   #yonetim{display:none;padding-top:16px}
-  body.yon .hero,body.yon .alert,body.yon #f,body.yon #done{display:none!important}
+  body.yon .hero,body.yon .alert,body.yon #f,body.yon #done,body.yon #sorgu,body.yon .duyuru,body.yon .kapali{display:none!important}
+  body.kapat #f,body.kapat .alert{display:none!important}
   body.yon #yonetim{display:block}
   .ycard{background:#fff;border:1px solid var(--line);border-radius:14px;padding:18px;margin-top:14px}
   .ycard h2{font-family:var(--display);font-size:24px;margin:0 0 4px;display:flex;align-items:center;justify-content:space-between;gap:10px}
@@ -151,6 +152,53 @@
   .addrow{display:flex;gap:8px}.addrow input{flex:1}
   .ymsg{font-size:14px;margin-top:8px;min-height:1em}.ymsg.err{color:var(--bad)}.ymsg.ok{color:var(--ok)}
   .login{max-width:380px;margin:30px auto 0}
+
+  .duyuru{display:flex;gap:10px;margin:16px 0 0;background:#fff8e1;border:1px solid #f2d38a;border-left:4px solid #e0a100;color:#5e4300;border-radius:10px;padding:12px 14px;font-size:15px}
+  .duyuru b{display:block;color:#8a6200}
+  .duyuru[hidden],.kapali[hidden]{display:none}
+  .kapali{margin:16px 0 0;background:#fff;border:1px solid var(--line);border-left:4px solid var(--steel);border-radius:10px;padding:14px;font-size:15.5px;color:var(--steel)}
+  .kapali b{display:block;font-family:var(--display);font-size:22px;color:var(--ink);margin-bottom:4px}
+  .sorgu{margin-top:16px}
+  .sres{margin-top:12px;border:1px solid var(--line);border-radius:10px;padding:12px 14px;background:var(--paper);font-size:15px}
+  .sres .dur{display:inline-block;font-weight:700;border-radius:6px;padding:3px 9px;margin:4px 0 6px}
+  .tabs{display:flex;gap:4px;margin-top:12px;border-bottom:1px solid var(--line);overflow-x:auto}
+  .tab{border:0;background:none;font:inherit;font-weight:600;font-size:15px;color:var(--muted);padding:10px 12px;border-bottom:3px solid transparent;cursor:pointer;white-space:nowrap}
+  .tab.on{color:var(--brand);border-bottom-color:var(--brand)}
+  .yhead{padding-bottom:0}
+  .fgrid{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-top:8px}
+  .fgrid select,.fgrid input{padding:10px 12px;font-size:15px}
+  .flbl{display:block;font-size:13.5px;font-weight:600;color:var(--steel)}
+  .flbl input,.flbl select,.flbl textarea{margin-top:4px}
+  input[type=search],input[type=number],input[type=date]{width:100%;font:inherit;font-size:16px;color:var(--ink);background:#fff;border:1.5px solid var(--line);border-radius:10px;padding:12px 14px;outline:none;appearance:none;-webkit-appearance:none}
+  input[type=search]:focus,input[type=number]:focus,input[type=date]:focus{border-color:var(--brand);box-shadow:0 0 0 4px rgba(25,56,138,.12)}
+  .frow{display:flex;justify-content:space-between;align-items:center;gap:8px;margin:10px 0 4px}
+  .slist li.ck{cursor:pointer}.slist li.ck:hover{background:var(--paper)}
+  .slist .rt{display:flex;flex-direction:column;align-items:flex-end;gap:4px;flex:none}
+  .dtag{font-size:12px;font-weight:600;border-radius:6px;padding:2px 8px;white-space:nowrap}
+  .d-yeni{background:#e8eefb;color:var(--brand)}.d-inc{background:#fbf3e8;color:var(--warn)}
+  .d-onlem{background:#ecf6f0;color:var(--ok)}.d-kap{background:var(--mist);color:var(--steel)}
+  .warnbox{background:#fcefed;border:1px solid #f0c9c4;border-left:4px solid var(--bad);color:#5c1a13;border-radius:10px;padding:10px 12px;font-size:15px;margin-top:14px}
+  .warnbox a{color:var(--bad);font-weight:700}
+  .slist .m.gec{color:var(--bad);font-weight:600}
+  .hbars .hb{display:grid;grid-template-columns:minmax(90px,38%) 1fr 34px;align-items:center;gap:8px;margin:6px 0;font-size:14px}
+  .hbars .hb .l{overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+  .hbars .hb .b{height:14px;background:var(--brand2);border-radius:4px;min-width:3px}
+  .hbars .hb .n{text-align:right;font-weight:700}
+  .modal{position:fixed;inset:0;z-index:50;background:rgba(15,28,64,.55);display:flex;align-items:flex-end;justify-content:center}
+  .modal[hidden]{display:none}
+  .msheet{background:#fff;width:100%;max-width:600px;max-height:92vh;overflow:auto;border-radius:16px 16px 0 0;padding:18px 18px 28px}
+  @media(min-width:640px){.modal{align-items:center}.msheet{border-radius:16px}}
+  .mhead{display:flex;justify-content:space-between;align-items:center;gap:10px;position:sticky;top:-18px;background:#fff;padding:6px 0 8px;margin-top:-6px}
+  .mhead h2{font-family:var(--display);font-size:26px;margin:0}
+  .mclose{border:0;background:var(--mist);width:36px;height:36px;border-radius:50%;font-size:22px;cursor:pointer;color:var(--steel)}
+  .dl{display:grid;grid-template-columns:120px 1fr;gap:6px 10px;font-size:15px;margin:6px 0}
+  .dl dt{color:var(--muted)}.dl dd{margin:0;white-space:pre-wrap;word-break:break-word}
+  .dfotos{display:flex;gap:8px;flex-wrap:wrap;margin:10px 0}
+  .dfotos img{width:31%;max-width:170px;aspect-ratio:1;object-fit:cover;border-radius:10px;cursor:zoom-in;border:1px solid var(--line)}
+  .dform{border-top:1px solid var(--mist);margin-top:12px;padding-top:4px}
+  .dform h3{font-family:var(--display);font-size:20px;margin:12px 0 6px}
+  .dform .flbl{margin-top:10px}
+  .ybtn.danger{background:#fff;color:var(--bad);border:1.5px solid #f0c9c4}
   footer{text-align:center;color:var(--muted);font-size:14px;margin-top:20px;padding-top:16px;border-top:1px solid var(--line)}
 
   .done{display:none;background:#fff;border:1px solid var(--line);border-top:4px solid var(--ok);border-radius:14px;padding:30px 22px;margin-top:16px;text-align:center}
@@ -184,7 +232,9 @@
 </section>
 
 <div class="wrap">
-<div class="alert" role="note">
+<div class="duyuru" id="duyuru" hidden><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" style="flex:none"><path d="M3 11l18-7v16L3 13z"/><path d="M11.6 16.8a3 3 0 1 1-5.8-1.6"/></svg><div><b>Duyuru</b><span id="duyuruMetin"></span></div></div>
+  <div class="kapali" id="kapali" hidden><b>Form şu anda kapalı</b><span id="kapaliMetin"></span></div>
+  <div class="alert" role="note">
     <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" style="flex:none"><path d="M10.3 3.9 1.8 18a2 2 0 0 0 1.7 3h17a2 2 0 0 0 1.7-3L13.7 3.9a2 2 0 0 0-3.4 0z"/><path d="M12 9v4M12 17h.01"/></svg>
     <div><b>Hayati tehlike veya acil durum varsa</b>önce bölgeyi güvenli hâle getirin, amirinize ve kontrol odasına hemen haber verin. Bu formu sonra doldurun.</div>
   </div>
@@ -289,8 +339,16 @@
     <h2>Bildiriminiz alındı</h2>
     <p>Teşekkür ederiz. Güvenli bir işyeri için yaptığınız katkı çok değerli.</p>
     <div class="trk" id="trk">—</div>
-    <p style="font-size:14px;color:var(--muted)">Takip numaranızı not alabilirsiniz.</p>
+    <p style="font-size:15px;margin:2px 0 8px">Kısa numaranız: <b id="kisaNo" style="font-size:20px">—</b></p>
+    <p style="font-size:14px;color:var(--muted)">Numaranızı not alın. Bu sayfanın altındaki <b>“Bildiriminizin durumu”</b> bölümünden alınan önlemi daha sonra görebilirsiniz.</p>
     <button type="button" id="again">Yeni bildirim yap</button>
+  </section>
+
+  <section class="ycard sorgu" id="sorgu">
+    <h3>Bildiriminizin durumu</h3>
+    <p class="sub">Takip numaranızın son rakamlarını yazmanız yeterli (ör. <b>24</b> ya da <b>0024</b>).</p>
+    <form class="addrow" id="sorguForm"><input type="text" id="sorguNo" placeholder="0024" inputmode="text" autocapitalize="characters" required><button class="ybtn sm" type="submit">Sorgula</button></form>
+    <div id="sorguSonuc"></div>
   </section>
 
 
@@ -312,7 +370,7 @@
 
     <!-- Panel -->
     <div id="yPanel" style="display:none">
-      <div class="ycard">
+      <div class="ycard yhead">
         <h2>Yönetici Paneli
           <span class="yrow">
             <button class="ybtn ghost sm" type="button" id="yenileBtn">Yenile</button>
@@ -320,47 +378,142 @@
           </span>
         </h2>
         <p class="sub" id="ySon">—</p>
+        <nav class="tabs" role="tablist">
+          <button type="button" class="tab on" data-tab="ozet">Özet</button>
+          <button type="button" class="tab" data-tab="bildirimler">Bildirimler</button>
+          <button type="button" class="tab" data-tab="raporlar">Raporlar</button>
+          <button type="button" class="tab" data-tab="ayarlar">Ayarlar</button>
+        </nav>
       </div>
 
-      <div class="ycard">
-        <h3>Özet</h3>
-        <div class="stats" id="stats"></div>
+      <!-- ÖZET -->
+      <div class="tabp" data-p="ozet">
+        <div class="warnbox" id="gecikUyari" style="display:none"></div>
+        <div class="ycard">
+          <h3>Özet</h3>
+          <div class="stats" id="stats"></div>
+        </div>
+        <div class="ycard">
+          <h3>Son 14 gün</h3>
+          <div class="chart" id="chart"></div>
+          <div class="cdays" id="cdays"></div>
+          <div class="legend"><span><i style="background:var(--brand2)"></i>Siteye giriş</span><span><i style="background:var(--bad);border-radius:50%"></i>Bildirim</span></div>
+        </div>
+        <div class="ycard">
+          <h3>Son bildirimler</h3>
+          <ul class="slist" id="sonList"></ul>
+          <button class="ybtn ghost sm" type="button" data-git="bildirimler" style="margin-top:10px">Tümünü gör</button>
+        </div>
       </div>
 
-      <div class="ycard">
-        <h3>Son 14 gün</h3>
-        <div class="chart" id="chart"></div>
-        <div class="cdays" id="cdays"></div>
-        <div class="legend"><span><i style="background:var(--brand2)"></i>Siteye giriş</span><span><i style="background:var(--bad);border-radius:50%"></i>Bildirim</span></div>
+      <!-- BİLDİRİMLER -->
+      <div class="tabp" data-p="bildirimler" hidden>
+        <div class="ycard">
+          <h3>Bildirimler</h3>
+          <input type="search" id="fAra" placeholder="Takip no, bölüm, açıklama, bildiren…">
+          <div class="fgrid">
+            <select id="fDurum"><option value="">Tüm durumlar</option><option value="acik">Açık (Yeni + İnceleniyor)</option><option>Yeni</option><option>İnceleniyor</option><option>Önlem Alındı</option><option>Kapandı</option></select>
+            <select id="fTur"><option value="">Tüm türler</option><option>Tehlikeli Durum</option><option>Güvensiz Davranış</option><option>Ramak Kala</option></select>
+            <select id="fAci"><option value="">Tüm aciliyetler</option><option>Yüksek</option><option>Orta</option><option>Düşük</option></select>
+            <select id="fSira"><option value="yeni">En yeni önce</option><option value="eski">En eski önce</option><option value="aci">Önce yüksek aciliyet</option></select>
+            <label class="flbl">Başlangıç<input type="date" id="fBas"></label>
+            <label class="flbl">Bitiş<input type="date" id="fBit"></label>
+          </div>
+          <div class="frow"><span id="fSay" class="sub" style="margin:0"></span><button class="ybtn ghost sm" type="button" id="fTemizle">Filtreleri temizle</button></div>
+          <ul class="slist" id="bList"></ul>
+        </div>
       </div>
 
-      <div class="ycard">
-        <h3>Son bildirimler</h3>
-        <ul class="slist" id="sonList"></ul>
+      <!-- RAPORLAR -->
+      <div class="tabp" data-p="raporlar" hidden>
+        <div class="ycard">
+          <h3>Dönem</h3>
+          <select id="rDonem">
+            <option value="ay">Bu ay</option><option value="gecenay">Geçen ay</option><option value="3ay">Son 3 ay</option>
+            <option value="yil">Bu yıl</option><option value="tum" selected>Tüm zamanlar</option>
+          </select>
+          <div class="stats" id="rStats" style="margin-top:12px"></div>
+        </div>
+        <div class="ycard"><h3>Bildirim türü</h3><div class="hbars" id="rTur"></div></div>
+        <div class="ycard"><h3>Aciliyet</h3><div class="hbars" id="rAci"></div></div>
+        <div class="ycard"><h3>Tehlike konuları</h3><div class="hbars" id="rKonu"></div></div>
+        <div class="ycard"><h3>En çok bildirim gelen yerler</h3><div class="hbars" id="rBolum"></div></div>
+        <div class="ycard">
+          <h3>Excel olarak indir</h3>
+          <p class="sub">Tarih seçmezseniz tüm kayıtlar (istatistikler dahil) iner.</p>
+          <div class="fgrid">
+            <label class="flbl">Başlangıç<input type="date" id="xBas"></label>
+            <label class="flbl">Bitiş<input type="date" id="xBit"></label>
+          </div>
+          <div class="yrow" style="margin-top:10px">
+            <button class="ybtn" type="button" id="excelBtn">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v12"/><path d="m7 10 5 5 5-5"/><path d="M5 21h14"/></svg>
+              Excel indir
+            </button>
+          </div>
+          <div class="ymsg" id="excelMsg"></div>
+        </div>
       </div>
 
-      <div class="ycard">
-        <h3>Bildirim e-postaları</h3>
-        <p class="sub">Her yeni bildirim bu adreslere gönderilir.</p>
-        <div class="mails" id="mailsNormal"></div>
-        <form class="addrow" id="mailForm"><input type="email" placeholder="ornek@sirket.com.tr" required><button class="ybtn sm" type="submit">Ekle</button></form>
-        <div class="ymsg" id="msgNormal"></div>
-      </div>
+      <!-- AYARLAR -->
+      <div class="tabp" data-p="ayarlar" hidden>
+        <div class="ycard">
+          <h3>Bildirim e-postaları</h3>
+          <p class="sub">Yeni bildirimler, hatırlatmalar ve aylık rapor bu adreslere gönderilir.</p>
+          <div class="mails" id="mailsNormal"></div>
+          <form class="addrow" id="mailForm" novalidate><input type="email" placeholder="ornek@sirket.com.tr" required><button class="ybtn sm" type="submit">Ekle</button></form>
+          <div class="ymsg" id="msgNormal"></div>
+        </div>
 
-      <div class="ycard">
-        <h3>Kayıtlar</h3>
-        <p class="sub">Tüm bildirimleri ve istatistikleri Excel dosyası olarak indirin.</p>
-        <div class="yrow">
-          <button class="ybtn" type="button" id="excelBtn">
-            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v12"/><path d="m7 10 5 5 5-5"/><path d="M5 21h14"/></svg>
-            Excel olarak indir
-          </button>
+        <form class="ycard" id="ayarForm">
+          <h3>Form duyurusu</h3>
+          <p class="sub">Formun en üstünde gösterilir. Boş bırakırsanız duyuru görünmez.</p>
+          <textarea id="aDuyuru" maxlength="500" style="min-height:80px" placeholder="Örn. Bu hafta 2. ünitede iskele çalışması var, bölgeye girerken dikkat."></textarea>
+
+          <h3 style="margin-top:20px">Form durumu</h3>
+          <label class="switch" style="margin-top:0"><div><span>Formu geçici olarak kapat</span><small>Kapalıyken çalışanlar bildirim gönderemez, aşağıdaki mesajı görür.</small></div><input type="checkbox" id="aKapali"><i class="tg"></i></label>
+          <textarea id="aKapaliMesaj" maxlength="300" style="min-height:70px;margin-top:8px"></textarea>
+
+          <h3 style="margin-top:20px">Geciken bildirim hatırlatması</h3>
+          <label class="switch" style="margin-top:0"><div><span>Her sabah hatırlatma gönder</span><small>Belirlenen günden uzun süredir açık duran bildirimlerin listesi saat 08:00'de e-postayla gelir.</small></div><input type="checkbox" id="aHat"><i class="tg"></i></label>
+          <label class="flbl" style="margin-top:8px">Kaç gün sonra hatırlatılsın?<input type="number" id="aHatGun" min="1" max="90"></label>
+
+          <h3 style="margin-top:20px">Aylık rapor</h3>
+          <label class="switch" style="margin-top:0"><div><span>Aylık raporu e-postayla gönder</span><small>Her ayın 1'inde, bir önceki ayın özeti gelir.</small></div><input type="checkbox" id="aRapor"><i class="tg"></i></label>
+
+          <div class="yrow" style="margin-top:16px"><button class="ybtn" type="submit">Ayarları kaydet</button></div>
+          <div class="ymsg" id="ayarMsg"></div>
+        </form>
+
+        <div class="ycard">
+          <h3>Google E-Tablo</h3>
+          <p class="sub">Tablo yalnızca orhanelisg hesabıyla giriş yapılmış bir tarayıcıda açılır.</p>
           <a class="ybtn ghost" id="tabloLink" href="#" target="_blank" rel="noopener">Google E-Tablo'da aç</a>
         </div>
-        <div class="ymsg" id="excelMsg"></div>
       </div>
 
       <div style="margin-top:14px"><button class="ybtn ghost" type="button" data-geri>Forma dön</button></div>
+    </div>
+
+    <!-- Bildirim detayı -->
+    <div class="modal" id="detay" hidden>
+      <div class="msheet" role="dialog" aria-modal="true" aria-labelledby="dBaslik">
+        <div class="mhead"><h2 id="dBaslik">—</h2><button type="button" class="mclose" id="dKapat" aria-label="Kapat">×</button></div>
+        <div id="dIcerik"></div>
+        <div id="dFotolar" class="dfotos"></div>
+        <form id="dForm" class="dform">
+          <h3>Takip</h3>
+          <label class="flbl">Durum<select id="dDurum"><option>Yeni</option><option>İnceleniyor</option><option>Önlem Alındı</option><option>Kapandı</option></select></label>
+          <label class="flbl">Sorumlu<input type="text" id="dSorumlu" maxlength="100" placeholder="Adı soyadı / birimi"></label>
+          <label class="flbl">Alınan önlem<textarea id="dOnlem" maxlength="2000" style="min-height:90px" placeholder="Ne yapıldı? Bildiren kişi takip numarasıyla bu metni görebilir."></textarea></label>
+          <label class="flbl">Kapanış tarihi<input type="date" id="dKapanis"></label>
+          <div class="yrow" style="margin-top:12px;justify-content:space-between">
+            <button class="ybtn" type="submit" id="dKaydet">Kaydet</button>
+            <button class="ybtn danger" type="button" id="dSil">Bildirimi sil</button>
+          </div>
+          <div class="ymsg" id="dMsg"></div>
+        </form>
+      </div>
     </div>
   </section>
 
@@ -480,30 +633,53 @@ function istek(veri){
   return new Promise(res => setTimeout(() => res(onizlemeYanit(veri)), 500));
 }
 
-// Siteye giriş sayısı: her tarayıcı oturumunda bir kez sayılır
-try {
-  if (!ONIZLEME && !sessionStorage.getItem('isg_z')) {
-    sessionStorage.setItem('isg_z', '1');
-    istek({ islem: 'ziyaret' }).catch(() => {});
-  }
-} catch (e) {}
+// ================= Açılış: duyuru, form durumu, giriş sayımı =================
+(function baslat(){
+  let say = false;
+  try { if (!sessionStorage.getItem('isg_z')) { sessionStorage.setItem('isg_z', '1'); say = true; } } catch (e) {}
+  istek({ islem: 'baslat', sayim: say && !ONIZLEME }).then(c => { if (c && c.ok) formAyarUygula(c); }).catch(() => {});
+})();
+function formAyarUygula(a){
+  $('#duyuru').hidden = !a.duyuru; $('#duyuruMetin').textContent = a.duyuru || '';
+  $('#kapali').hidden = !a.formKapali; $('#kapaliMetin').textContent = a.kapaliMesaj || '';
+  document.body.classList.toggle('kapat', !!a.formKapali);
+}
+
+// ================= Bildirim durumu sorgulama (çalışanlar için) =================
+const DURUM_RENK = { 'Yeni': 'd-yeni', 'İnceleniyor': 'd-inc', 'Önlem Alındı': 'd-onlem', 'Kapandı': 'd-kap' };
+const ACIKLAR = ['Yeni', 'İnceleniyor'];
+$('#sorguForm').addEventListener('submit', e => {
+  e.preventDefault();
+  const no = $('#sorguNo').value.trim().toUpperCase(), kutu = $('#sorguSonuc');
+  if (!no) return;
+  kutu.innerHTML = '<div class="sres">Sorgulanıyor…</div>';
+  istek({ islem: 'durumSorgu', no }).then(c => {
+    if (!c.ok) { kutu.innerHTML = `<div class="sres" style="color:var(--bad)">${esc(c.hata || 'Bulunamadı.')}</div>`; return; }
+    kutu.innerHTML = `<div class="sres"><b>${esc(c.no)}</b> · ${esc(c.tur)} · ${esc(c.tarih)}<br>
+      <span class="dur dtag ${DURUM_RENK[c.durum] || ''}">${esc(c.durum)}</span>
+      ${c.onlem ? `<div><b>Alınan önlem:</b> ${esc(c.onlem)}</div>` : '<div style="color:var(--muted)">Bildiriminiz İSG birimi tarafından ele alınıyor.</div>'}
+      ${c.kapanis ? `<div style="color:var(--muted);font-size:14px;margin-top:4px">Kapanış: ${esc(c.kapanis)}</div>` : ''}</div>`;
+  }).catch(() => { kutu.innerHTML = '<div class="sres" style="color:var(--bad)">Bağlantı hatası. Tekrar deneyin.</div>'; });
+});
 
 // ================= Yönetici paneli =================
 let anahtar = null;
 try { anahtar = sessionStorage.getItem('isg_y'); } catch (e) {}
 const esc = s => String(s == null ? '' : s).replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+const fmtT = t => t ? t.slice(8, 10) + '.' + t.slice(5, 7) + '.' + t.slice(0, 4) + (t.length > 10 ? ' ' + t.slice(11, 16) : '') : '';
+const gunOnce = t => Math.floor((Date.now() - new Date(t.replace(' ', 'T') + ':00').getTime()) / 864e5);
 
 function yonetimAc(){
   document.body.classList.add('yon'); window.scrollTo({ top: 0 });
   if (anahtar) panelYukle(); else girisGoster();
 }
-function yonetimKapat(){ document.body.classList.remove('yon'); window.scrollTo({ top: 0 }); }
+function yonetimKapat(){ document.body.classList.remove('yon'); detayKapat(); window.scrollTo({ top: 0 }); }
 function girisGoster(){
   $('#yGiris').style.display = ''; $('#yPanel').style.display = 'none';
   $('#girisMsg').textContent = ''; $('#ySifre').value = ''; setTimeout(() => $('#ySifre').focus(), 50);
 }
 function oturumBitti(c){
-  if (c && c.hata === 'OTURUM') { anahtar = null; try { sessionStorage.removeItem('isg_y'); } catch (e) {} girisGoster(); return true; }
+  if (c && c.hata === 'OTURUM') { anahtar = null; try { sessionStorage.removeItem('isg_y'); } catch (e) {} detayKapat(); girisGoster(); return true; }
   return false;
 }
 $('#admBtn').onclick = yonetimAc;
@@ -520,6 +696,14 @@ $('#girisForm').addEventListener('submit', e => {
   }).catch(() => { b.disabled = false; $('#girisMsg').textContent = 'Bağlantı hatası. Tekrar deneyin.'; });
 });
 
+// --- Sekmeler
+function sekme(ad){
+  document.querySelectorAll('.tab').forEach(t => t.classList.toggle('on', t.dataset.tab === ad));
+  document.querySelectorAll('.tabp').forEach(p => p.hidden = p.dataset.p !== ad);
+}
+document.querySelectorAll('.tab').forEach(t => t.onclick = () => sekme(t.dataset.tab));
+document.querySelectorAll('[data-git]').forEach(b => b.onclick = () => { sekme(b.dataset.git); window.scrollTo({ top: 0 }); });
+
 let panel = null;
 function panelYukle(){
   $('#yGiris').style.display = 'none'; $('#yPanel').style.display = '';
@@ -531,13 +715,24 @@ function panelYukle(){
   }).catch(() => { $('#ySon').textContent = 'Bağlantı hatası. "Yenile"ye basın.'; });
 }
 function panelCiz(){
-  const o = panel.ozet;
   $('#ySon').textContent = 'Son güncelleme: ' + new Date().toLocaleString('tr-TR', { dateStyle: 'short', timeStyle: 'short' });
+  ozetCiz(); listeCiz(); raporCiz(); ayarCiz();
+}
+
+// --- Özet
+function ozetCiz(){
+  const K = panel.kayitlar, ay = panel.bugun.slice(0, 7);
+  const acik = K.filter(k => ACIKLAR.includes(k.durum));
+  const gecik = acik.filter(k => gunOnce(k.kayit) >= panel.ayarlar.hatirlatmaGun);
   const kart = (deger, ad, sinif) => `<div class="stat ${sinif||''}"><b>${Number(deger).toLocaleString('tr-TR')}</b><span>${ad}</span></div>`;
   $('#stats').innerHTML =
-    kart(o.toplamZiyaret, 'Siteye toplam giriş') + kart(o.bugunZiyaret, 'Bugün giriş') +
-    kart(o.toplamBildirim, 'Toplam bildirim') + kart(o.ayBildirim, 'Bu ay bildirim') +
-    kart(o.acik, 'Açık bildirim') + kart(o.yuksekAcik, 'Açık · yüksek aciliyet', o.yuksekAcik ? 'warn' : '');
+    kart(panel.ziyaret.toplam, 'Siteye toplam giriş') + kart(panel.ziyaret.bugun, 'Bugün giriş') +
+    kart(K.length, 'Toplam bildirim') + kart(K.filter(k => k.kayit.slice(0, 7) === ay).length, 'Bu ay bildirim') +
+    kart(acik.length, 'Açık bildirim') + kart(acik.filter(k => k.aciliyet === 'Yüksek').length, 'Açık · yüksek aciliyet', acik.some(k => k.aciliyet === 'Yüksek') ? 'warn' : '');
+  const u = $('#gecikUyari');
+  u.style.display = gecik.length ? '' : 'none';
+  u.innerHTML = `<b>${gecik.length} bildirim</b> ${panel.ayarlar.hatirlatmaGun} günden uzun süredir açık. <a href="#" id="gecikGit">Göster</a>`;
+  if (gecik.length) $('#gecikGit').onclick = e => { e.preventDefault(); filtreTemizle(); $('#fDurum').value = 'acik'; $('#fSira').value = 'eski'; listeCiz(); sekme('bildirimler'); };
 
   const enCok = Math.max(1, ...panel.gunler.map(g => g.ziyaret));
   $('#chart').innerHTML = panel.gunler.map(g =>
@@ -546,15 +741,162 @@ function panelCiz(){
        <span class="v">${g.ziyaret || ''}</span>
        <div class="bar" style="height:${Math.round(g.ziyaret / enCok * 78)}%"></div></div>`).join('');
   $('#cdays').innerHTML = panel.gunler.map(g => `<span>${g.tarih.slice(8)}</span>`).join('');
+  satirlariCiz($('#sonList'), K.slice().sort((a, b) => a.kayit < b.kayit ? 1 : -1).slice(0, 6), 'Henüz bildirim yok.');
+}
+function satirlariCiz(ul, liste, bos){
+  ul.innerHTML = liste.length ? liste.map(k => {
+    const g = ACIKLAR.includes(k.durum) ? gunOnce(k.kayit) : -1;
+    return `<li class="ck" data-no="${esc(k.no)}"><div><div class="t">${esc(k.no)} · ${esc(k.tur)}</div>
+      <div class="m">${esc(fmtT(k.kayit))} · ${esc(k.bolum)}${k.foto ? ' · 📷' + k.foto : ''}</div>
+      ${g >= panel.ayarlar.hatirlatmaGun ? `<div class="m gec">${g} gündür açık</div>` : ''}</div>
+      <div class="rt"><span class="tag ${esc(k.aciliyet)}">${esc(k.aciliyet)}</span><span class="dtag ${DURUM_RENK[k.durum] || ''}">${esc(k.durum)}</span></div></li>`;
+  }).join('') : `<li class="empty">${bos}</li>`;
+  ul.querySelectorAll('li.ck').forEach(li => li.onclick = () => detayAc(li.dataset.no));
+}
 
-  $('#sonList').innerHTML = panel.son.length ? panel.son.map(s =>
-    `<li><div><div class="t">${esc(s.no)} · ${esc(s.tur)}</div><div class="m">${esc(s.zaman)} · ${esc(s.bolum)} · ${esc(s.durum)}</div></div>
-     <span class="tag ${esc(s.aciliyet)}">${esc(s.aciliyet)}</span></li>`).join('')
-    : '<li class="empty">Henüz bildirim yok.</li>';
+// --- Bildirimler: filtre ve arama
+const FILTRE = ['#fAra', '#fDurum', '#fTur', '#fAci', '#fSira', '#fBas', '#fBit'];
+FILTRE.forEach(s => $(s).addEventListener('input', () => panel && listeCiz()));
+function filtreTemizle(){ FILTRE.forEach(s => $(s).value = ''); $('#fSira').value = 'yeni'; }
+$('#fTemizle').onclick = () => { filtreTemizle(); listeCiz(); };
+function listeCiz(){
+  const ara = $('#fAra').value.trim().toLocaleLowerCase('tr'), d = $('#fDurum').value, t = $('#fTur').value, a = $('#fAci').value;
+  const bas = $('#fBas').value, bit = $('#fBit').value, sira = $('#fSira').value;
+  let L = panel.kayitlar.filter(k =>
+    (!d || (d === 'acik' ? ACIKLAR.includes(k.durum) : k.durum === d)) && (!t || k.tur === t) && (!a || k.aciliyet === a) &&
+    (!bas || k.kayit.slice(0, 10) >= bas) && (!bit || k.kayit.slice(0, 10) <= bit) &&
+    (!ara || [k.no, k.bolum, k.ekipman, k.aciklama, k.oneri, k.ad, k.konular, k.sorumlu, k.onlem].join(' ').toLocaleLowerCase('tr').includes(ara)));
+  const ACI = { 'Yüksek': 0, 'Orta': 1, 'Düşük': 2 };
+  L.sort((x, y) => sira === 'eski' ? (x.kayit > y.kayit ? 1 : -1)
+    : sira === 'aci' ? ((ACI[x.aciliyet] ?? 3) - (ACI[y.aciliyet] ?? 3) || (x.kayit < y.kayit ? 1 : -1))
+    : (x.kayit < y.kayit ? 1 : -1));
+  $('#fSay').textContent = L.length + ' bildirim';
+  satirlariCiz($('#bList'), L, 'Bu filtrelere uyan bildirim yok.');
+}
 
+// --- Detay
+let acikNo = null;
+function detayAc(no){
+  const k = panel.kayitlar.find(x => x.no === no); if (!k) return;
+  acikNo = no;
+  $('#dBaslik').textContent = k.no;
+  const sat = (b, d) => d ? `<dt>${b}</dt><dd>${esc(d)}</dd>` : '';
+  $('#dIcerik').innerHTML = `<div class="yrow" style="margin-bottom:6px"><span class="tag ${esc(k.aciliyet)}">${esc(k.aciliyet)}</span><span class="dtag ${DURUM_RENK[k.durum] || ''}">${esc(k.durum)}</span></div>
+    <dl class="dl">${sat('Tür', k.tur)}${sat('Kayıt', fmtT(k.kayit))}${sat('Olay zamanı', k.olay)}${sat('Bölüm / Yer', k.bolum)}${sat('Ekipman', k.ekipman)}
+    ${sat('Tehlike konusu', k.konular)}${sat('Açıklama', k.aciklama)}${sat('Öneri', k.oneri)}${sat('Bildiren', k.ad || 'İsimsiz')}${sat('Telefon', k.tel)}</dl>`;
+  $('#dFotolar').innerHTML = k.foto ? `<span class="sub" style="margin:0">${k.foto} fotoğraf yükleniyor…</span>` : '';
+  if (k.foto) istek({ islem: 'fotolar', anahtar, no }).then(c => {
+    if (acikNo !== no || oturumBitti(c)) return;
+    $('#dFotolar').innerHTML = c.ok && c.fotolar.length ? c.fotolar.map(f => `<img src="${f}" alt="Bildirim fotoğrafı">`).join('') : '<span class="sub">Fotoğraflar açılamadı.</span>';
+    $('#dFotolar').querySelectorAll('img').forEach(i => i.onclick = () => { const w = window.open(); if (w) w.document.write('<img src="' + i.src + '" style="max-width:100%">'); });
+  });
+  $('#dDurum').value = k.durum; $('#dSorumlu').value = k.sorumlu; $('#dOnlem').value = k.onlem; $('#dKapanis').value = k.kapanis;
+  $('#dMsg').textContent = '';
+  $('#detay').hidden = false; document.body.style.overflow = 'hidden';
+}
+function detayKapat(){ $('#detay').hidden = true; document.body.style.overflow = ''; acikNo = null; }
+$('#dKapat').onclick = detayKapat;
+$('#detay').addEventListener('click', e => { if (e.target.id === 'detay') detayKapat(); });
+document.addEventListener('keydown', e => { if (e.key === 'Escape' && !$('#detay').hidden) detayKapat(); });
+$('#dDurum').addEventListener('change', () => {
+  if (!ACIKLAR.includes($('#dDurum').value) && !$('#dKapanis').value) $('#dKapanis').value = panel.bugun;
+  if (ACIKLAR.includes($('#dDurum').value)) $('#dKapanis').value = '';
+});
+$('#dForm').addEventListener('submit', e => {
+  e.preventDefault();
+  const no = acikNo, msg = $('#dMsg'), b = $('#dKaydet');
+  const v = { islem: 'guncelle', anahtar, no, durum: $('#dDurum').value, sorumlu: $('#dSorumlu').value.trim(), onlem: $('#dOnlem').value.trim(), kapanis: $('#dKapanis').value };
+  b.disabled = true; msg.className = 'ymsg'; msg.textContent = 'Kaydediliyor…';
+  istek(v).then(c => {
+    b.disabled = false;
+    if (oturumBitti(c)) return;
+    if (!c.ok) { msg.className = 'ymsg err'; msg.textContent = c.hata; return; }
+    const k = panel.kayitlar.find(x => x.no === no);
+    Object.assign(k, { durum: v.durum, sorumlu: v.sorumlu, onlem: v.onlem, kapanis: c.kapanis });
+    $('#dKapanis').value = c.kapanis;
+    msg.className = 'ymsg ok'; msg.textContent = 'Kaydedildi.';
+    ozetCiz(); listeCiz(); raporCiz();
+    setTimeout(detayKapat, 700);
+  }).catch(() => { b.disabled = false; msg.className = 'ymsg err'; msg.textContent = 'Bağlantı hatası.'; });
+});
+$('#dSil').onclick = () => {
+  const no = acikNo;
+  if (!window.confirm(no + ' numaralı bildirim silinsin mi?\n\nSilinen bildirim tablodaki "Silinenler" sayfasına taşınır.')) return;
+  const msg = $('#dMsg'); msg.className = 'ymsg'; msg.textContent = 'Siliniyor…';
+  istek({ islem: 'sil', anahtar, no }).then(c => {
+    if (oturumBitti(c)) return;
+    if (!c.ok) { msg.className = 'ymsg err'; msg.textContent = c.hata; return; }
+    panel.kayitlar = panel.kayitlar.filter(x => x.no !== no);
+    detayKapat(); ozetCiz(); listeCiz(); raporCiz();
+  }).catch(() => { msg.className = 'ymsg err'; msg.textContent = 'Bağlantı hatası.'; });
+};
+
+// --- Raporlar
+$('#rDonem').addEventListener('change', () => panel && raporCiz());
+function raporCiz(){
+  const d = $('#rDonem').value, bugun = panel.bugun, y = +bugun.slice(0, 4), m = +bugun.slice(5, 7);
+  const ayStr = (yy, mm) => { while (mm < 1) { mm += 12; yy--; } return yy + '-' + String(mm).padStart(2, '0'); };
+  const L = panel.kayitlar.filter(k => {
+    const a = k.kayit.slice(0, 7);
+    return d === 'ay' ? a === ayStr(y, m) : d === 'gecenay' ? a === ayStr(y, m - 1) : d === '3ay' ? a >= ayStr(y, m - 2) : d === 'yil' ? a.slice(0, 4) === String(y) : true;
+  });
+  const say = (o, k) => { if (k) o[k] = (o[k] || 0) + 1; };
+  const tur = {}, aci = {}, konu = {}, bolum = {};
+  let kap = 0, sure = 0, sureN = 0;
+  L.forEach(k => {
+    say(tur, k.tur); say(aci, k.aciliyet);
+    k.konular.split(',').map(x => x.trim()).filter(Boolean).forEach(x => say(konu, x.startsWith('Diğer') ? 'Diğer' : x));
+    const b = k.bolum.split(/[,\-–(]/)[0].trim().toLocaleLowerCase('tr'); say(bolum, b.charAt(0).toLocaleUpperCase('tr') + b.slice(1));
+    if (!ACIKLAR.includes(k.durum)) { kap++; if (k.kapanis) { const g = (new Date(k.kapanis) - new Date(k.kayit.slice(0, 10))) / 864e5; if (g >= 0) { sure += g; sureN++; } } }
+  });
+  const kart = (deger, ad) => `<div class="stat"><b>${deger}</b><span>${ad}</span></div>`;
+  $('#rStats').innerHTML = kart(L.length, 'Bildirim') + kart(kap, 'Kapanan / önlem alınan') + kart(L.length - kap, 'Açık') +
+    kart(L.length ? '%' + Math.round(kap / L.length * 100) : '–', 'Kapanma oranı') + kart(sureN ? (Math.round(sure / sureN * 10) / 10) + ' gün' : '–', 'Ort. kapanış süresi');
+  const bar = (el, o) => {
+    const s = Object.keys(o).sort((a, b) => o[b] - o[a]).slice(0, 8), mx = Math.max(1, ...s.map(x => o[x]));
+    el.innerHTML = s.length ? s.map(x => `<div class="hb"><span class="l" title="${esc(x)}">${esc(x)}</span><span><span class="b" style="display:block;width:${Math.round(o[x] / mx * 100)}%"></span></span><span class="n">${o[x]}</span></div>`).join('')
+      : '<span class="empty">Bu dönemde veri yok.</span>';
+  };
+  bar($('#rTur'), tur); bar($('#rAci'), aci); bar($('#rKonu'), konu); bar($('#rBolum'), bolum);
+}
+
+$('#excelBtn').onclick = () => {
+  const b = $('#excelBtn'), msg = $('#excelMsg');
+  b.disabled = true; msg.className = 'ymsg'; msg.textContent = 'Excel hazırlanıyor…';
+  istek({ islem: 'excel', anahtar, bas: $('#xBas').value, bit: $('#xBit').value }).then(c => {
+    b.disabled = false;
+    if (oturumBitti(c)) return;
+    if (!c.ok) { msg.className = 'ymsg err'; msg.textContent = c.hata; return; }
+    const bin = atob(c.veri), arr = new Uint8Array(bin.length);
+    for (let i = 0; i < bin.length; i++) arr[i] = bin.charCodeAt(i);
+    const url = URL.createObjectURL(new Blob([arr], { type: 'application/vnd.openxmlformats-officedocument.spreadsheetml.sheet' }));
+    const a = document.createElement('a'); a.href = url; a.download = c.dosyaAdi; document.body.appendChild(a); a.click();
+    setTimeout(() => { URL.revokeObjectURL(url); a.remove(); }, 2000);
+    msg.className = 'ymsg ok'; msg.textContent = 'İndirildi: ' + c.dosyaAdi;
+  }).catch(() => { b.disabled = false; msg.className = 'ymsg err'; msg.textContent = 'Bağlantı hatası.'; });
+};
+
+// --- Ayarlar
+function ayarCiz(){
   mailCiz();
+  const a = panel.ayarlar;
+  $('#aDuyuru').value = a.duyuru; $('#aKapali').checked = a.formKapali; $('#aKapaliMesaj').value = a.kapaliMesaj;
+  $('#aHat').checked = a.hatirlatmaAcik; $('#aHatGun').value = a.hatirlatmaGun; $('#aRapor').checked = a.aylikRaporAcik;
   $('#tabloLink').href = panel.tabloUrl || '#';
 }
+$('#ayarForm').addEventListener('submit', e => {
+  e.preventDefault();
+  const msg = $('#ayarMsg');
+  const ayarlar = { duyuru: $('#aDuyuru').value.trim(), formKapali: $('#aKapali').checked, kapaliMesaj: $('#aKapaliMesaj').value.trim(),
+    hatirlatmaAcik: $('#aHat').checked, hatirlatmaGun: Number($('#aHatGun').value) || 7, aylikRaporAcik: $('#aRapor').checked };
+  msg.className = 'ymsg'; msg.textContent = 'Kaydediliyor…';
+  istek({ islem: 'ayarKaydet', anahtar, ayarlar }).then(c => {
+    if (oturumBitti(c)) return;
+    if (!c.ok) { msg.className = 'ymsg err'; msg.textContent = c.hata; return; }
+    panel.ayarlar = c.ayarlar; ayarCiz(); ozetCiz(); formAyarUygula(c.ayarlar);
+    msg.className = 'ymsg ok'; msg.textContent = 'Ayarlar kaydedildi.' + (c.ayarlar.formKapali ? ' Form şu anda KAPALI.' : '');
+  }).catch(() => { msg.className = 'ymsg err'; msg.textContent = 'Bağlantı hatası.'; });
+});
 function mailCiz(){
   const liste = panel.epostalar || [];
   const kutu = $('#mailsNormal');
@@ -593,39 +935,43 @@ $('#cikisBtn').onclick = () => {
   yonetimKapat();
 };
 
-$('#excelBtn').onclick = () => {
-  const b = $('#excelBtn'), msg = $('#excelMsg');
-  b.disabled = true; msg.className = 'ymsg'; msg.textContent = 'Excel hazırlanıyor…';
-  istek({ islem: 'excel', anahtar }).then(c => {
-    b.disabled = false;
-    if (oturumBitti(c)) return;
-    if (!c.ok) { msg.className = 'ymsg err'; msg.textContent = c.hata; return; }
-    const bin = atob(c.veri), arr = new Uint8Array(bin.length);
-    for (let i = 0; i < bin.length; i++) arr[i] = bin.charCodeAt(i);
-    const url = URL.createObjectURL(new Blob([arr], { type: 'application/vnd.openxmlformats-officedocument.spreadsheetml.sheet' }));
-    const a = document.createElement('a'); a.href = url; a.download = c.dosyaAdi; document.body.appendChild(a); a.click();
-    setTimeout(() => { URL.revokeObjectURL(url); a.remove(); }, 2000);
-    msg.className = 'ymsg ok'; msg.textContent = 'İndirildi: ' + c.dosyaAdi;
-  }).catch(() => { b.disabled = false; msg.className = 'ymsg err'; msg.textContent = 'Bağlantı hatası.'; });
-};
-
 // ---- Önizleme (bilgisayarda dosyadan açıldığında) için örnek veriler ----
-let onizlemeMail = ['isg@ornek.com.tr'];
+let onizleme = null;
+function onizlemeVeri(){
+  if (onizleme) return onizleme;
+  const bugun = new Date().toISOString().slice(0, 10);
+  const gun = n => new Date(Date.now() - n * 864e5).toISOString().slice(0, 10);
+  const ornek = [
+    ['Ramak Kala', 'Yüksek', 'Kazan dairesi, +24 kotu', 'Sıcak Yüzey / Buhar', 'Yeni', 1, ''],
+    ['Tehlikeli Durum', 'Orta', 'Kömür hazırlama, B-3 bandı', 'Hareketli Makine / Bant', 'İnceleniyor', 9, ''],
+    ['Güvensiz Davranış', 'Düşük', 'Mekanik atölye', 'KKD Eksikliği', 'Kapandı', 15, 'Çalışanlara KKD eğitimi verildi.'],
+    ['Tehlikeli Durum', 'Yüksek', 'Şalt sahası', 'Elektrik', 'Önlem Alındı', 22, 'Pano kapağı değiştirildi.'],
+    ['Ramak Kala', 'Orta', 'Kömür stok sahası', 'İş Makinesi / Trafik', 'Kapandı', 40, 'Yaya yolu işaretlendi.'],
+    ['Tehlikeli Durum', 'Düşük', 'İdari bina', 'Düzen / Tertip', 'Yeni', 3, '']
+  ];
+  onizleme = { ok: true, bugun, tabloUrl: '#', epostalar: ['isg@ornek.com.tr'],
+    ayarlar: { duyuru: '', formKapali: false, kapaliMesaj: 'Bildirim formu geçici olarak kapalıdır.', hatirlatmaAcik: true, hatirlatmaGun: 7, aylikRaporAcik: true },
+    ziyaret: { toplam: 412, bugun: 31 },
+    gunler: Array.from({ length: 14 }, (_, i) => ({ tarih: gun(13 - i), ziyaret: 5 + ((i * 7) % 26), bildirim: [1, 3, 9].includes(13 - i) ? 1 : 0 })),
+    kayitlar: ornek.map((o, i) => ({ no: 'ISG-2026-00' + (20 + ornek.length - i), kayit: gun(o[5]) + ' 10:1' + i, olay: '', tur: o[0], aciliyet: o[1], bolum: o[2],
+      ekipman: '', konular: o[3], aciklama: 'Örnek açıklama metni.', oneri: '', ad: i % 2 ? '' : 'Ahmet Yılmaz', tel: '', foto: 0,
+      durum: o[4], sorumlu: o[6] ? 'Mehmet K.' : '', onlem: o[6], kapanis: o[6] ? gun(Math.max(0, o[5] - 4)) : '' })) };
+  return onizleme;
+}
 function onizlemeYanit(v){
+  const d = onizlemeVeri();
   switch (v.islem) {
     case 'bildirim': return { ok: true, no: 'ISG-ÖNİZLEME' };
+    case 'baslat': return { ok: true, duyuru: d.ayarlar.duyuru, formKapali: d.ayarlar.formKapali, kapaliMesaj: d.ayarlar.kapaliMesaj };
+    case 'durumSorgu': { const q = String(v.no).replace(/\D/g, '').slice(-4).padStart(4, '0'); const k = d.kayitlar.find(x => x.no === v.no || x.no.endsWith('-' + q)); return k ? { ok: true, no: k.no, tarih: fmtT(k.kayit).slice(0, 10), tur: k.tur, durum: k.durum, onlem: k.onlem, kapanis: fmtT(k.kapanis) } : { ok: false, hata: 'Bu takip numarasıyla bir bildirim bulunamadı. (Önizlemede 24 deneyin.)' }; }
     case 'giris': return v.sifre ? { ok: true, anahtar: 'demo' } : { ok: false, hata: 'Şifre hatalı.' };
-    case 'epostaKaydet': onizlemeMail = v.liste; return { ok: true, liste: v.liste };
+    case 'panel': return JSON.parse(JSON.stringify(d));
+    case 'epostaKaydet': d.epostalar = v.liste; return { ok: true, liste: v.liste };
+    case 'ayarKaydet': d.ayarlar = Object.assign({}, v.ayarlar); return { ok: true, ayarlar: d.ayarlar };
+    case 'guncelle': { const k = d.kayitlar.find(x => x.no === v.no); const kap = ACIKLAR.includes(v.durum) ? '' : (v.kapanis || d.bugun); Object.assign(k, { durum: v.durum, sorumlu: v.sorumlu, onlem: v.onlem, kapanis: kap }); return { ok: true, kapanis: kap }; }
+    case 'sil': d.kayitlar = d.kayitlar.filter(x => x.no !== v.no); return { ok: true };
+    case 'fotolar': return { ok: true, fotolar: [] };
     case 'excel': return { ok: false, hata: 'Önizlemede Excel indirilemez.' };
-    case 'panel': {
-      const gunler = [];
-      for (let i = 13; i >= 0; i--) { const d = new Date(Date.now() - i * 864e5); gunler.push({ tarih: d.toISOString().slice(0, 10), ziyaret: Math.round(5 + Math.random() * 30), bildirim: Math.random() < .35 ? 1 + Math.floor(Math.random() * 2) : 0 }); }
-      return { ok: true, ozet: { toplamZiyaret: 412, bugunZiyaret: gunler[13].ziyaret, toplamBildirim: 23, ayBildirim: 9, acik: 5, yuksekAcik: 1 },
-        gunler, epostalar: onizlemeMail, tabloUrl: '#',
-        son: [{ no: 'ISG-2026-0023', zaman: '23.11.2026 14:05', tur: 'Ramak Kala', aciliyet: 'Yüksek', bolum: 'Kazan +24 kotu', durum: 'Yeni' },
-              { no: 'ISG-2026-0022', zaman: '22.11.2026 09:40', tur: 'Tehlikeli Durum', aciliyet: 'Orta', bolum: 'Kömür bandı B-3', durum: 'İnceleniyor' },
-              { no: 'ISG-2026-0021', zaman: '21.11.2026 16:12', tur: 'Güvensiz Davranış', aciliyet: 'Düşük', bolum: 'Mekanik atölye', durum: 'Kapandı' }] };
-    }
   }
   return { ok: true };
 }
@@ -633,7 +979,7 @@ function onizlemeYanit(v){
 function busy(b){ const s = $('#send'); s.disabled = b; s.classList.toggle('busy', b); s.querySelector('span').textContent = b ? 'Gönderiliyor…' : 'Bildirimi Gönder'; }
 function fail(){ const m = $('#formerr'); m.textContent = 'Gönderilemedi. İnternet bağlantınızı kontrol edip tekrar deneyin.'; m.style.display = 'block'; }
 function success(no){
-  $('#trk').textContent = no; $('#f').style.display = 'none'; $('.alert').style.display = 'none';
+  $('#trk').textContent = no; $('#kisaNo').textContent = String(no).split('-').pop(); $('#f').style.display = 'none'; $('.alert').style.display = 'none';
   $('#done').style.display = 'block'; window.scrollTo({top:0, behavior:'smooth'});
 }
 $('#again').onclick = () => {
